@@ -1,0 +1,17 @@
+
+a {
+  color: white;
+}
+
+span {
+  color: white;
+}
+
+#footer{
+  background-color: #55a2e6;
+  min-height: 50px;
+  vertical-align: middle;
+  line-height: 50px;
+  text-align: center;
+}
+

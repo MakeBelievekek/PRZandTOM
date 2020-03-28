@@ -1,0 +1,16 @@
+<table class="table table-primary ">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Discount</th>
+            <th scope="col">Percent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let disc of allDiscounts ,let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{disc.name}}</td>
+            <td>{{disc.value}}%</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,57 @@
+p {
+    font-family: Lato;
+}
+
+.grid-discount-progress-container {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas:
+                       "n ."
+                       ". .";
+}
+
+.percent {
+  grid-area: n;
+}
+
+.discounts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80px 350px;
+  grid-template-areas: "a1 a2" "b b" ;
+}
+
+.dis-grid {
+  background-color: #55a2e6;
+  grid-area: a1;
+}
+.grid-discount-table{
+  grid-area: b ;
+}
+.all-discount {
+  grid-area: a2;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+  grid-template-areas: "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
+  background-color: #55a2e6;
+}
+.text-center-grid{
+
+  grid-area: c2 ;
+}
+
+@media screen and (max-width: 999px) {
+  .grid-discount-progress-container {
+    height: 100vh;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-areas: ". n .";
+
+  }
+
+  .percent{
+    grid-area: n;
+  }
+}
+

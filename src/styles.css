@@ -1,0 +1,15 @@
+.jumbotron{
+  min-height: 100vh;
+  margin: 0;
+}
+.grid-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr  1fr;
+  grid-template-areas:  "a b c ";
+}
+.right-button{
+  grid-area: c;
+}
+.left-button{
+  grid-area: a;
+}
