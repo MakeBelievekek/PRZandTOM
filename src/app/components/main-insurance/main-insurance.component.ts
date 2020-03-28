@@ -81,6 +81,7 @@ export class MainInsuranceComponent implements OnInit {
     // this.apiService.calculate(this.getValues()).subscribe(() => {
     //   console.log(this.getValues())
     // });
+    // ezcsak placeholder
     this.backendService.firstStep().subscribe(value1 => console.log('ez már a csecsen beckend: ', value1))
   }
 
