@@ -9,8 +9,8 @@ import {ApiService} from '../../services/api-service';
 import {UtilRepoService} from '../../services/util-repo.service';
 import {DiscountService} from "../../services/discount-service";
 import {DiscountModel} from "../../model/discount-model";
-import {BackendService} from "../../services/backend.service";
-import {log} from "util";
+import {FeeCalculationService} from "../../services/fee-calculation.service";
+import {DateModel} from "../../model/date.model";
 
 @Component({
   selector: 'app-main-insurance',
@@ -34,13 +34,15 @@ export class MainInsuranceComponent implements OnInit {
     showSelectionBar: true,
 
   };
+  date: DateModel;
+  insuranceData: MainInsuranceModel;
 
   constructor(private formBuilder: FormBuilder,
               private utilRepoService: UtilRepoService,
               private apiService: ApiService,
               private router: Router,
               private discountService: DiscountService,
-              private backendService: BackendService) {
+              private feeCalculationService: FeeCalculationService) {
     this.insuranceForm = this.formBuilder.group({
       amountOfIns: [],
       numberOfIns: [],
@@ -55,6 +57,7 @@ export class MainInsuranceComponent implements OnInit {
     this.typeOfFrequency = this.utilRepoService.getTypeOfFrequency();
     this.policyDiscounts = this.utilRepoService.getPolicyDiscounts();
     this.paymentMethods = this.utilRepoService.getPaymentMethods();
+
   }
 
   ngOnInit(): void {
@@ -78,11 +81,15 @@ export class MainInsuranceComponent implements OnInit {
   }
 
   sendValues() {
-    // this.apiService.calculate(this.getValues()).subscribe(() => {
-    //   console.log(this.getValues())
-    // });
-    // ezcsak placeholder
-    this.backendService.firstStep().subscribe(value1 => console.log('ez már a csecsen beckend: ', value1))
+    this.insuranceData = {...this.insuranceForm.value};
+    this.insuranceData.customerDisc =1 + this.insuranceData.customerDisc;
+    this.insuranceData.campaignDisc =1 + this.insuranceData.campaignDisc;
+    this.date = {...this.model};
+    this.feeCalculationService.calculateFee(this.insuranceData, this.date).subscribe(
+      value1 => {
+        console.log(value1);
+      }
+    );
   }
 
   selectHandler() {
