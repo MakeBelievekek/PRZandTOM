@@ -90,6 +90,7 @@ export class MainInsuranceComponent implements OnInit {
         console.log(value1);
       }
     );
+    this.router.navigate(['/additional'])
   }
 
   selectHandler() {

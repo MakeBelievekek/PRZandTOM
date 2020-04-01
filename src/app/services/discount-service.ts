@@ -21,7 +21,7 @@ export class DiscountService {
       {name: 2, value: 0.15},
       {name: 3, value: 0.15},
       {name: 4, value: 0.15},
-      {name: 4, value: 0.15},
+      {name: 5, value: 0.15},
     ];
     this.typeOfFrequency = [
       {name: 1, value: 0.12},
