@@ -1,18 +1,49 @@
 <div class="form-grid-container">
-    <div class="form-content">
-        <div class="card-body bg-white shadow rounded">
-            <form [formGroup]="additionalInsuranceForm">
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-8">
-
-                    </div>
-                </div>
-            </form>
-            <div class="grid-row pt-3">
-                <button type="submit" class="btn btn-primary left-button" routerLink="">Prev</button>
-                <button type="submit" class="btn btn-primary right-button ">Next</button>
-            </div>
+  <div class="form-content">
+    <div class="card-body bg-white shadow rounded">
+      <form [formGroup]="additionalInsuranceForm">
+        <div class="grid-row pt-3">
+          <h3 class="pl-sm-2 pl-md-3 pl-lg-3  middle-position " >Additional insurances</h3>
         </div>
+        <hr>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-md-8">
+            <div class="grid-row pt-3">
+              <label class="switch left-position">
+                <input type="checkbox" formControlName="campaignDisc">
+                <span class="slider round"></span>
+              </label>
+              <span class="pl-sm-2 pl-md-3 pl-lg-3  middle-position">Accidental death</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-md-8">
+            <div class="grid-row pt-3">
+              <label class="switch left-position">
+                <input type="checkbox" formControlName="campaignDisc">
+                <span class="slider round"></span>
+              </label>
+              <span class="pl-sm-2 pl-md-3 pl-lg-3 middle-position">Traffic accidental death</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-md-8">
+            <div class="grid-row pt-3">
+              <label class="switch left-position">
+                <input type="checkbox" formControlName="campaignDisc">
+                <span class="slider round"></span>
+              </label>
+              <span class="pl-sm-2 pl-md-3 pl-lg-3  middle-position">Surgical reimbursement for any reason</span>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="grid-row pt-3">
+        <button type="submit" class="btn btn-primary left-position" routerLink="">Prev</button>
+        <button type="submit" class="btn btn-primary right-position ">Next</button>
+      </div>
     </div>
-
-
+  </div>
+</div>>

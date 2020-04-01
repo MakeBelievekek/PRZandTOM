@@ -1,8 +1,12 @@
 <div class="form-grid-container">
-<div class="form-header"><h5>Main insurance</h5></div>
+
   <div class="form-content">
     <div class="card-body bg-white shadow rounded">
       <form [formGroup]="insuranceForm">
+        <div class="grid-row pt-3">
+          <h3 class="pl-sm-2 pl-md-3 pl-lg-3  middle-position " >Main insurances</h3>
+        </div>
+        <hr>
         <div class="gridTwoByTwo">
           <div class="gridTwoByTwoLeft">
             <label for="date">Birth date</label>
@@ -85,7 +89,7 @@
         </div>
       </form>
       <div class="grid-row pt-3">
-        <button type="submit" class="btn btn-primary right-button " (click)="sendValues()"
+        <button type="submit" class="btn btn-primary right-position " (click)="sendValues()"
         >Next
         </button>
       </div>
