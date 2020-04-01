@@ -1,0 +1,46 @@
+@media screen and (max-width: 998px) {
+
+  #insurance {
+    margin: 33px;
+  }
+
+  #discounts {
+    margin: 33px;
+  }
+}
+
+@media screen and (min-width: 999px) {
+  .insurance-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "form discount";
+    justify-content: center;
+    grid-gap: 33px;
+  }
+
+  .form-space {
+    grid-area: form;
+  }
+
+  .discount-space {
+    grid-area: discount;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .insurance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.75fr 0.25fr;
+    grid-template-areas: ". form discount .";
+    justify-content: center;
+
+  }
+
+  .form-space {
+    grid-area: form;
+  }
+
+  .discount-space {
+    grid-area: discount;
+  }
+}

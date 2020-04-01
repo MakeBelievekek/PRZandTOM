@@ -14,7 +14,7 @@ import {SliderComponent} from './components/shared/slider/slider.component';
 import {AdditionalInsuranceComponent} from './components/insurance/additional-insurance/additional-insurance.component';
 import {DiscountProgressComponent} from './components/insurance/discounts/discount-progress/discount-progress.component';
 import {PercentCircleComponent} from './components/shared/percent-circle/percent-circle.component';
-import {DiscountTableComponent} from './components/insurance/discounts/discount-table/discount-table.component';
+import {DiscountTableComponent} from './components/insurance/discounts/discount-progress/discount-table/discount-table.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InsuranceComponent } from './components/insurance/insurance.component';
 import { DiscountsComponent } from './components/insurance/discounts/discounts.component';

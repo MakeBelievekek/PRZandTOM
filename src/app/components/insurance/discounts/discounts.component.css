@@ -1,0 +1,12 @@
+@media screen and (min-width: 999px) {
+  .grid-discount-progress-container {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: "content ." ". .";
+  }
+
+  .discount-percent-space {
+    grid-area: content;
+  }
+}

@@ -2,18 +2,6 @@ p {
     font-family: Lato;
 }
 
-.grid-discount-progress-container {
-  display: grid;
-  grid-template-columns: 90% 10%;
-  grid-template-rows: 2fr 1fr;
-  grid-template-areas:
-                       "n ."
-                       ". .";
-}
-
-.percent {
-  grid-area: n;
-}
 
 .discounts-grid {
   display: grid;
