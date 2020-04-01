@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DiscountService} from "../../services/discount-service";
+import {DiscountService} from "../../../services/discount-service";
 
 
 @Component({

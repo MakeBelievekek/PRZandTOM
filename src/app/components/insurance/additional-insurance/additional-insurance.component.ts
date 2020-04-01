@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Page } from '../../enum/page';
-import { UtilRepoService } from '../../services/util-repo.service';
+import { Page } from '../../../enum/page';
+import { UtilRepoService } from '../../../services/util-repo.service';
 
 @Component({
     selector: 'app-additional-insurance',

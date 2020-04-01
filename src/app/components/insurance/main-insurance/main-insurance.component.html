@@ -1,12 +1,9 @@
 <div class="form-grid-container">
+<div class="form-header"><h5>Main insurance</h5></div>
   <div class="form-content">
     <div class="card-body bg-white shadow rounded">
       <form [formGroup]="insuranceForm">
         <div class="gridTwoByTwo">
-          <div class="gridTwoByTwoRight">
-            <label for="amountOfIns">Amount of insurance</label>
-            <input type="number" class="form-control" id="amountOfIns" formControlName="amountOfIns">
-          </div>
           <div class="gridTwoByTwoLeft">
             <label for="date">Birth date</label>
             <div class="form-inline">
@@ -19,6 +16,10 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="gridTwoByTwoRight">
+            <label for="amountOfIns">Amount of insurance</label>
+            <input type="number" class="form-control" id="amountOfIns" formControlName="amountOfIns">
           </div>
         </div>
         <div>

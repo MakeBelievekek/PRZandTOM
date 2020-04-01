@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from '../../enum/page';
-import { UtilRepoService } from '../../services/util-repo.service';
+import { Page } from '../../../enum/page';
+import { UtilRepoService } from '../../../services/util-repo.service';
 
 @Component({
     selector: 'app-progress-bar',

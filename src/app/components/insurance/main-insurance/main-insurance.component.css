@@ -5,7 +5,9 @@
 .form-grid-container{
   display: grid;
   grid-template-columns: 2fr 8fr 2fr;
-  grid-template-areas: ". c .";
+  grid-template-rows: 33px 1fr;
+  grid-template-areas: ". header ."
+                       ". c .";
   justify-content: center;
 }
 
@@ -13,6 +15,10 @@
   grid-area: c;
 }
 
+.form-header{
+   grid-area: header;
+  text-align: center;
+}
 .gridTwoByTwo {
   grid-row-gap: 10px;
   display: grid;

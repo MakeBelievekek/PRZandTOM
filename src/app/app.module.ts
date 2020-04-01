@@ -5,17 +5,19 @@ import {NgCircleProgressModule} from 'ng-circle-progress';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainInsuranceComponent} from './components/main-insurance/main-insurance.component';
+import {MainInsuranceComponent} from './components/insurance/main-insurance/main-insurance.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
-import {FooterComponent} from './components/footer/footer.component';
+import {ProgressBarComponent} from './components/shared/progress-bar/progress-bar.component';
+import {FooterComponent} from './components/shared/footer/footer.component';
 import {Ng5SliderModule} from 'ng5-slider';
-import {SliderComponent} from './components/slider/slider.component';
-import {AdditionalInsuranceComponent} from './components/additional-insurance/additional-insurance.component';
-import {DiscountProgressComponent} from './components/discount-progress/discount-progress.component';
-import {PercentCircleComponent} from './components/percent-circle/percent-circle.component';
-import {DiscountTableComponent} from './components/discount-table/discount-table.component';
+import {SliderComponent} from './components/shared/slider/slider.component';
+import {AdditionalInsuranceComponent} from './components/insurance/additional-insurance/additional-insurance.component';
+import {DiscountProgressComponent} from './components/insurance/discounts/discount-progress/discount-progress.component';
+import {PercentCircleComponent} from './components/shared/percent-circle/percent-circle.component';
+import {DiscountTableComponent} from './components/insurance/discounts/discount-table/discount-table.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { InsuranceComponent } from './components/insurance/insurance.component';
+import { DiscountsComponent } from './components/insurance/discounts/discounts.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AdditionalInsuranceComponent,
     DiscountProgressComponent,
     PercentCircleComponent,
-    DiscountTableComponent
+    DiscountTableComponent,
+    InsuranceComponent,
+    DiscountsComponent,
   ],
   imports: [
     BrowserModule,

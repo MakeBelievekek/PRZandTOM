@@ -3,14 +3,14 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Options} from 'ng5-slider';
-import {Page} from '../../enum/page';
-import {MainInsuranceModel} from '../../model/main-insurance-model';
-import {ApiService} from '../../services/api-service';
-import {UtilRepoService} from '../../services/util-repo.service';
-import {DiscountService} from "../../services/discount-service";
-import {DiscountModel} from "../../model/discount-model";
-import {FeeCalculationService} from "../../services/fee-calculation.service";
-import {DateModel} from "../../model/date.model";
+import {Page} from '../../../enum/page';
+import {MainInsuranceModel} from '../../../model/main-insurance-model';
+import {ApiService} from '../../../services/api-service';
+import {UtilRepoService} from '../../../services/util-repo.service';
+import {DiscountService} from "../../../services/discount-service";
+import {DiscountModel} from "../../../model/discount-model";
+import {FeeCalculationService} from "../../../services/fee-calculation.service";
+import {DateModel} from "../../../model/date.model";
 
 @Component({
   selector: 'app-main-insurance',

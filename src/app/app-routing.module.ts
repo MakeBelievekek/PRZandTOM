@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdditionalInsuranceComponent } from './components/additional-insurance/additional-insurance.component';
-import { MainInsuranceComponent } from './components/main-insurance/main-insurance.component';
+import { AdditionalInsuranceComponent } from './components/insurance/additional-insurance/additional-insurance.component';
+import { MainInsuranceComponent } from './components/insurance/main-insurance/main-insurance.component';
 
 
 const routes: Routes = [

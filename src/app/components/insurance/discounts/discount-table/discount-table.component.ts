@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DiscountModel} from "../../model/discount-model";
-import {DiscountTableModel} from "../../model/discount-table-model";
-import {DiscountService} from "../../services/discount-service";
+import {DiscountModel} from "../../../../model/discount-model";
+import {DiscountTableModel} from "../../../../model/discount-table-model";
+import {DiscountService} from "../../../../services/discount-service";
 
 
 @Component({
