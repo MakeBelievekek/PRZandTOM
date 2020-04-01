@@ -1,16 +1,25 @@
 
-.form-container {
-  margin: 50px auto;
 
+@media screen and (max-width: 999px) {
+
+#progressBar {
+  margin: 33px;
+}
 }
 @media screen and (min-width: 999px) {
   .form-grid-container {
     display: grid;
     grid-template-columns: 2fr 8fr 2fr;
-    grid-template-areas: ". content .";
+    grid-template-rows: 33px 1fr;
+    grid-template-areas: "progressBar progressBar progressBar" ". content .";
     justify-content: center;
-
+    grid-row-gap: 33px;
   }
+
+  .form-progress-bar {
+    grid-area: progressBar;
+  }
+
 
   .form-content {
     grid-area: content;

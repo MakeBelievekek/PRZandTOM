@@ -1,10 +1,12 @@
 <div class="form-grid-container">
-
+  <div class="form-progress-bar">
+    <app-progress-bar></app-progress-bar>
+  </div>
   <div class="form-content">
     <div class="card-body bg-white shadow rounded">
       <form [formGroup]="insuranceForm">
         <div class="grid-row pt-3">
-          <h3 class="pl-sm-2 pl-md-3 pl-lg-3  middle-position " >Main insurances</h3>
+          <h3 class="pl-sm-2 pl-md-3 pl-lg-3  middle-position ">Main insurances</h3>
         </div>
         <hr>
         <div class="gridTwoByTwo">
@@ -61,7 +63,8 @@
           </div>
           <div class="gridTwoByTwoRight">
             <label for="paymentDiscount">Payment method </label>
-            <select id="paymentDiscount" class="form-control" formControlName="paymentMethod" (change)="selectHandler()">
+            <select id="paymentDiscount" class="form-control" formControlName="paymentMethod"
+                    (change)="selectHandler()">
               <option selected>Choose...</option>
               <option *ngFor="let method of this.paymentMethods"
                       [value]="method.value">{{method.name}} </option>

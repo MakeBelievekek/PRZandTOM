@@ -1,9 +1,11 @@
 * {
   box-sizing: border-box;
 }
-.margin{
+
+.margin {
   margin: 50px;
 }
+
 #progress {
   padding: 0;
   list-style-type: none;
@@ -18,7 +20,7 @@
 #progress li {
   float: left;
   padding: 10px 30px 10px 40px;
-  background: #55a2e6 ;
+  background: #55a2e6;
   color: #fff;
   position: relative;
   border-top: 1px solid #666;
@@ -36,6 +38,7 @@
   top: 0;
   left: 0;
 }
+
 #progress li:after {
   content: '';
   border-left: 16px solid #55a2e6;
@@ -56,21 +59,31 @@
   border-left-color: #5d778f;
 }
 
-.gridProgress{
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 0.5fr;
-  grid-template-areas:
-    ". b .";
+@media screen and (min-width: 999px) {
 
-}
-
-.bar{
-  grid-area: b;
-}
-
-@media screen and (max-width: 760px) {
-  .gridProgress{
-    grid-template-columns: none;
+  .gridProgress {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-areas: ". progressBar .";
 
   }
+
+  .bar {
+    grid-area: progressBar;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  #valami {
+
+
+    align-content: center;
+    align-content: center;
+    text-align: center;
+    min-height: 33px;
+    max-height: 33px;
+
+    margin-bottom: 33px;
+  }
+
 }
