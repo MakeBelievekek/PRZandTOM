@@ -25,11 +25,6 @@ export class InsuranceComponent implements OnInit {
       }
     );
 
-    this.utilRepoService.progress.subscribe(
-      pageToShow => {
-        this.showingPage = pageToShow;
-      }
-    );
   }
 
 }

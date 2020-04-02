@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Page} from '../../../enum/page';
 import {UtilRepoService} from '../../../services/util-repo.service';
 
@@ -9,16 +9,19 @@ import {UtilRepoService} from '../../../services/util-repo.service';
 })
 export class ProgressBarComponent implements OnInit {
 
-  pageShowing: string = 'main';
+  @Input() pageShowing: string;
 
   constructor(private utilRepoService: UtilRepoService) {
+    this.pageShowing = Page.FIRST;
   }
 
   ngOnInit(): void {
-    this.utilRepoService.progress.subscribe(
-      pageToShow => {
-        this.pageShowing = pageToShow;
-      }
-    );
+    console.log(this.pageShowing)
+    // this.utilRepoService.progress.subscribe(
+    //   pageToShow => {
+    //     this.pageShowing = pageToShow;
+    //     console.log('ezt kellene most látni: ', this.pageShowing)
+    //       }
+    //     );
   }
 }

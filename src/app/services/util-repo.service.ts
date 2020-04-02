@@ -6,10 +6,6 @@ import {Page} from '../enum/page';
   providedIn: 'root',
 })
 export class UtilRepoService {
-
-  progress = new Subject<string>();
-
-
   numOfInsureds: any [];
   typeOfFrequency: any [];
   policyDiscounts: any [];

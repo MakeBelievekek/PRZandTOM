@@ -21,7 +21,7 @@ import {DateModel} from "../../../model/date.model";
 
 export class MainInsuranceComponent implements OnInit {
 
-
+  barState: string;
   insuranceForm: FormGroup;
   numberOfInsuredValues: any[];
   typeOfFrequency: any[];
@@ -62,7 +62,7 @@ export class MainInsuranceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.utilRepoService.progress.next(Page.FIRST);
+    this.barState = Page.FIRST;
   }
 
   getValues(): MainInsuranceModel {

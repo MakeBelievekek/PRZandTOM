@@ -13,7 +13,8 @@ import * as $ from 'jquery';
 })
 export class AdditionalInsuranceComponent implements OnInit {
 
-  price: number = 500;
+  barState: string;
+  price : number = 500;
   additionalInsuranceForm: FormGroup;
 
   constructor(private utilRepoService: UtilRepoService, private formBuilder: FormBuilder) {
@@ -21,7 +22,7 @@ export class AdditionalInsuranceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.utilRepoService.progress.next(Page.SECOND);
+    this.barState = Page.SECOND;
     this.counter();
   }
 
