@@ -1,8 +1,8 @@
 <div class="insurance-grid">
   <div class="form-space">
     <div id="insurance">
-      <app-main-insurance *ngIf="false"></app-main-insurance>
-      <app-additional-insurance *ngIf="true"></app-additional-insurance>
+      <app-main-insurance *ngIf="showingPage === 'main'"></app-main-insurance>
+      <app-additional-insurance *ngIf="showingPage === 'additional'"></app-additional-insurance>
     </div>
   </div>
   <div class="discount-space">

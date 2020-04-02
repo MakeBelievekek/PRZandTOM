@@ -6,7 +6,7 @@ import {InsuranceComponent} from "./components/insurance/insurance.component";
 
 const routes: Routes = [
     {path: '', component: InsuranceComponent},
-    {path: 'additional', component: AdditionalInsuranceComponent},
+    {path: ':page', component: InsuranceComponent},
 ];
 
 @NgModule({

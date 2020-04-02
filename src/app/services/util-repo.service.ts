@@ -3,11 +3,11 @@ import {Subject} from 'rxjs';
 import {Page} from '../enum/page';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class UtilRepoService {
 
-    progress = new Subject<Page>();
+  progress = new Subject<string>();
 
 
   numOfInsureds: any [];

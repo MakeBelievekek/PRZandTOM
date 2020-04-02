@@ -21,6 +21,7 @@ import {DateModel} from "../../../model/date.model";
 
 export class MainInsuranceComponent implements OnInit {
 
+
   insuranceForm: FormGroup;
   numberOfInsuredValues: any[];
   typeOfFrequency: any[];
@@ -82,16 +83,17 @@ export class MainInsuranceComponent implements OnInit {
 
   sendValues() {
     this.insuranceData = {...this.insuranceForm.value};
-    this.insuranceData.customerDisc =1 + this.insuranceData.customerDisc;
-    this.insuranceData.campaignDisc =1 + this.insuranceData.campaignDisc;
+    this.insuranceData.customerDisc = 1 + this.insuranceData.customerDisc;
+    this.insuranceData.campaignDisc = 1 + this.insuranceData.campaignDisc;
     this.date = {...this.model};
-    this.feeCalculationService.calculateFee(this.insuranceData, this.date).subscribe(
-      value1 => {
-        console.log(value1);
-      }
-    );
-    this.router.navigate(['/additional'])
+    // this.feeCalculationService.calculateFee(this.insuranceData, this.date).subscribe(
+    //   value1 => {
+    //     console.log(value1);
+    //   }
+    // );
+    this.router.navigate([Page.SECOND])
   }
+
 
   selectHandler() {
     const discounts: DiscountModel = {

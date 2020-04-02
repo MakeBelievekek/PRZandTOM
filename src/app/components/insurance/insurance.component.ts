@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ShowingPageModel} from "../../model/showingPage.model";
+import {UtilRepoService} from "../../services/util-repo.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Page} from "../../enum/page";
 
 @Component({
   selector: 'app-insurance',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsuranceComponent implements OnInit {
 
-  constructor() { }
+  showingPage: string = Page.FIRST;
+
+  constructor(private utilRepoService: UtilRepoService,
+              private route : ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(
+      pageChanged => {
+        let pageToShow = pageChanged.get('page');
+        if (pageToShow) {
+          this.showingPage = pageToShow;
+        }
+      }
+    );
+
+    this.utilRepoService.progress.subscribe(
+      pageToShow => {
+        this.showingPage = pageToShow;
+      }
+    );
   }
 
 }

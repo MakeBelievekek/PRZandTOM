@@ -2,9 +2,9 @@
 <div class="gridProgress">
   <div class="bar">
     <ul id="progress">
-      <li [ngClass]="{'active':isFirstPage}">Step 1</li>
-      <li [ngClass]="{'active':isSecondPage}">Step 2</li>
-      <li [ngClass]="{'active':isThirdPage}">Step 3</li>
+      <li [ngClass]="{'active':pageShowing === 'main'}">Step 1</li>
+      <li [ngClass]="{'active':pageShowing === 'additional'}">Step 2</li>
+      <li [ngClass]="{'active':pageShowing === 'third'}">Step 3</li>
     </ul>
   </div>
 </div>
