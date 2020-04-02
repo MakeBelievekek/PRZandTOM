@@ -30,7 +30,7 @@ export class AdditionalInsuranceComponent implements OnInit {
       duration: 4000,
       easing: 'linear',
       step: function () {
-        $('.counter-count').html(Math.floor(this.countNum) );
+        $('.counter-count').html(Math.floor(this.countNum)+" HUF" );
       },
     });
   }
