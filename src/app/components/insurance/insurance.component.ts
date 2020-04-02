@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ShowingPageModel} from "../../model/showingPage.model";
 import {UtilRepoService} from "../../services/util-repo.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {Page} from "../../enum/page";
 
 @Component({

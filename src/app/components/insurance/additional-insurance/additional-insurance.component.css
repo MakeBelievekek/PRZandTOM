@@ -162,8 +162,7 @@ input:checked + .slider:before {
   height: 92px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+
   display: inline-block;
 }
 
