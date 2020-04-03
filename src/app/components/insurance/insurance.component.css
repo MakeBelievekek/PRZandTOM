@@ -38,6 +38,10 @@
 
 @media screen and (max-width: 998px) {
 
+  .insurance-grid {
+    display: block;
+  }
+
   #insurance {
     margin: 2rem 8rem 2rem 8rem;
   }
@@ -49,6 +53,9 @@
 }
 
 @media screen and (max-width: 650px) {
+  .insurance-grid {
+    display: block;
+  }
 
   #insurance {
     margin: 25px 15px 25px 15px;

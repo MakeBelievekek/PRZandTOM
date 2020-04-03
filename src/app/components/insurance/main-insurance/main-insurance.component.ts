@@ -117,6 +117,5 @@ export class MainInsuranceComponent implements OnInit {
 
   sendDiscount(data) {
     this.discountService.discount.next(data)
-
   }
 }

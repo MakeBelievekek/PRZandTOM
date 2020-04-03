@@ -10,12 +10,14 @@ import {Page} from "../../enum/page";
 })
 export class InsuranceComponent implements OnInit {
 
-  showingPage: string = Page.FIRST;
+  showingPage: string;
 
   constructor(private utilRepoService: UtilRepoService,
               private route : ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.showingPage = Page.FIRST;
+
     this.route.paramMap.subscribe(
       pageChanged => {
         let pageToShow = pageChanged.get('page');
@@ -25,6 +27,10 @@ export class InsuranceComponent implements OnInit {
       }
     );
 
+  }
+
+  ngOnDestroy() {
+    console.log('most halok meg')
   }
 
 }

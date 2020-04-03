@@ -32,14 +32,8 @@ p {
 
 @media screen and (max-width: 999px) {
   .grid-discount-progress-container {
-    height: 100vh;
-    grid-template-columns: 0.1fr 1fr 0.1fr;
-    grid-template-areas: ". n .";
-
+  display: block;
   }
 
-  .percent{
-    grid-area: n;
-  }
 }
 
