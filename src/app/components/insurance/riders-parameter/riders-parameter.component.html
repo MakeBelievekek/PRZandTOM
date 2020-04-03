@@ -4,33 +4,40 @@
   </div>
   <div class="form-content">
     <div class="card-body bg-white shadow rounded">
-      <form>
+      <form [formGroup]="riderForm">
         <div class="grid-row pt-3">
           <h3 class="pl-sm-2 pl-md-3 pl-lg-3  middle-position ">Rider parameter</h3>
         </div>
         <hr>
-
-
         <!--   Accidental death     -->
 
-        <label for="accidental">Accidental death</label>
-        <input type="number" class="form-control" id="accidental" placeholder="Amount of insurance">
+        <div *ngIf="this.selectedInsurances.accidental">
+          <label for="accidental">Accidental death</label>
+          <input type="number" class="form-control" id="accidental" placeholder="Amount of insurance"
+                 formControlName="accidental">
+        </div>
 
         <!--   Traffic accidental death    -->
 
-        <label for="traffic">Traffic accidental death death</label>
-        <input type="number" class="form-control" id="traffic" placeholder="Amount of insurance">
-
+        <div *ngIf="this.selectedInsurances.traffic">
+          <label for="traffic">Traffic accidental death death</label>
+          <input type="number" class="form-control" id="traffic" placeholder="Amount of insurance"
+                 formControlName="traffic">
+        </div>
         <!--   Surgical reimbursement for any reason    -->
 
-        <label for="surgical">Surgical reimbursement for any reason</label>
-        <input type="number" class="form-control" id="surgical" placeholder="Amount of insurance">
-
+        <div *ngIf="this.selectedInsurances.surgical">
+          <label for="surgical">Surgical reimbursement for any reason</label>
+          <input type="number" class="form-control" id="surgical" placeholder="Amount of insurance"
+                 formControlName="surgical">
+        </div>
 
       </form>
       <div class="grid-row pt-3">
-        <button type="submit" class="btn btn-primary left-position" [routerLink]="['/additional']">Prev</button>
-        <button type="submit" class="btn btn-primary right-position" [routerLink]="['/riders']">Finalize</button>
+        <button type="submit" class="btn btn-primary left-position" (click)="onPrev()">Prev</button>
+        <button type="submit" class="btn btn-primary right-position" (click)="onSubmit()">
+          Finalize
+        </button>
       </div>
 
     </div>

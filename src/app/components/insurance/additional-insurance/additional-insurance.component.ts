@@ -4,6 +4,10 @@ import {Page} from '../../../enum/page';
 import {UtilRepoService} from '../../../services/util-repo.service';
 
 import * as $ from 'jquery';
+import {SelectedInsurancesModel} from "./selectedInsurances.model";
+import {Router} from "@angular/router";
+import {query} from "@angular/animations";
+import {InsuranceService} from "../../../services/insurance.service";
 
 
 @Component({
@@ -16,12 +20,21 @@ export class AdditionalInsuranceComponent implements OnInit {
   barState: string;
   price : number = 500;
   additionalInsuranceForm: FormGroup;
+  selectedInsurances: SelectedInsurancesModel;
+  constructor(private utilRepoService: UtilRepoService,
+              private formBuilder: FormBuilder,
+              private router: Router,
+              private insuranceService: InsuranceService) {
+    this.additionalInsuranceForm = this.formBuilder.group({
+      accidental: [],
+      traffic: [],
+      surgical: [],
+    });
 
-  constructor(private utilRepoService: UtilRepoService, private formBuilder: FormBuilder) {
-    this.additionalInsuranceForm = this.formBuilder.group({});
   }
 
   ngOnInit(): void {
+    this.additionalInsuranceForm.setValue(this.insuranceService.getSelectedInsurances());
     this.barState = Page.SECOND;
     this.counter();
   }
@@ -34,6 +47,12 @@ export class AdditionalInsuranceComponent implements OnInit {
         $('.counter-count').html(Math.floor(this.countNum)+" HUF" );
       },
     });
+  }
+
+  onNext() {
+    this.selectedInsurances = {...this.additionalInsuranceForm.value}
+    this.insuranceService.setSelectedInsurances(this.selectedInsurances);
+    this.router.navigate(['/riders', ]);
   }
 
 }
