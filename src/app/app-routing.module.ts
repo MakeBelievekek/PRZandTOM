@@ -6,15 +6,19 @@ import {MainInsuranceComponent} from "./components/insurance/main-insurance/main
 
 
 const routes: Routes = [
-    {path: '', component: InsuranceComponent, children:[
-        {path: 'main', component: MainInsuranceComponent},
-        {path: 'additional', component: AdditionalInsuranceComponent},
-      ]},
+  {path: '', redirectTo: 'main', pathMatch: 'full'},
+
+  {
+    path: '', component: InsuranceComponent, children: [
+      {path: 'main', component: MainInsuranceComponent},
+      {path: 'additional', component: AdditionalInsuranceComponent},
+    ]
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {
 }
