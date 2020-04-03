@@ -1,0 +1,38 @@
+<div class="form-grid-container">
+  <div class="form-progress-bar">
+    <app-progress-bar [pageShowing]="barState"></app-progress-bar>
+  </div>
+  <div class="form-content">
+    <div class="card-body bg-white shadow rounded">
+      <form>
+        <div class="grid-row pt-3">
+          <h3 class="pl-sm-2 pl-md-3 pl-lg-3  middle-position ">Rider parameter</h3>
+        </div>
+        <hr>
+
+
+        <!--   Accidental death     -->
+
+        <label for="accidental">Accidental death</label>
+        <input type="number" class="form-control" id="accidental" placeholder="Amount of insurance">
+
+        <!--   Traffic accidental death    -->
+
+        <label for="traffic">Traffic accidental death death</label>
+        <input type="number" class="form-control" id="traffic" placeholder="Amount of insurance">
+
+        <!--   Surgical reimbursement for any reason    -->
+
+        <label for="surgical">Surgical reimbursement for any reason</label>
+        <input type="number" class="form-control" id="surgical" placeholder="Amount of insurance">
+
+
+      </form>
+      <div class="grid-row pt-3">
+        <button type="submit" class="btn btn-primary left-position" [routerLink]="['/additional']">Prev</button>
+        <button type="submit" class="btn btn-primary right-position" [routerLink]="['/riders']">Finalize</button>
+      </div>
+
+    </div>
+  </div>
+</div>

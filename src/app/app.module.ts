@@ -18,6 +18,7 @@ import {DiscountTableComponent} from './components/insurance/discounts/discount-
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InsuranceComponent } from './components/insurance/insurance.component';
 import { DiscountsComponent } from './components/insurance/discounts/discounts.component';
+import { RidersParameterComponent } from './components/insurance/riders-parameter/riders-parameter.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DiscountsComponent } from './components/insurance/discounts/discounts.c
     DiscountTableComponent,
     InsuranceComponent,
     DiscountsComponent,
+    RidersParameterComponent,
   ],
   imports: [
     BrowserModule,

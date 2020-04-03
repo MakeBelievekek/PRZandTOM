@@ -1,3 +1,3 @@
 export enum Page {
-    FIRST = 'main', SECOND = 'additional', THIRD = 'third'
+    FIRST = 'main', SECOND = 'additional', THIRD = 'riders'
 }

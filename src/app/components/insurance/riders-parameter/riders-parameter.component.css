@@ -1,0 +1,41 @@
+@media screen and (max-width: 999px) {
+
+  #progressBar {
+    margin: 33px;
+  }
+}
+@media screen and (min-width: 999px) {
+  .form-grid-container {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-rows: 33px 1fr;
+    grid-template-areas: "progressBar progressBar progressBar" ". content .";
+    justify-content: center;
+    grid-row-gap: 33px;
+  }
+
+  .form-progress-bar {
+    grid-area: progressBar;
+  }
+
+
+  .form-content {
+    grid-area: content;
+  }
+
+  .gridTwoByTwo {
+    grid-row-gap: 10px;
+    grid-column-gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "l  r";
+  }
+
+  .gridTwoByTwoLeft {
+    grid-area: l;
+  }
+
+  .gridTwoByTwoRight {
+    grid-area: r;
+  }
+}
