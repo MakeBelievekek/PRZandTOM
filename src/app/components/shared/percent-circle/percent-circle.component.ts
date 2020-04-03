@@ -15,10 +15,10 @@ export class PercentCircleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.discountService.allDiscount.subscribe((data) => {
-      this.progress = data * 100;
-
-    })
+    // this.discountService.allDiscount.subscribe((data) => {
+    //   this.progress = data * 100;
+    //
+    // })
   }
 
 }

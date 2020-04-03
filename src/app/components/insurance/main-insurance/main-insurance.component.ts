@@ -11,6 +11,7 @@ import {DiscountService} from "../../../services/discount-service";
 import {DiscountModel} from "../../../model/discount-model";
 import {FeeCalculationService} from "../../../services/fee-calculation.service";
 import {DateModel} from "../../../model/date.model";
+import {InsuranceService} from "../../../services/insurance.service";
 
 @Component({
   selector: 'app-main-insurance',
@@ -21,6 +22,7 @@ import {DateModel} from "../../../model/date.model";
 
 export class MainInsuranceComponent implements OnInit {
 
+  discounts: DiscountModel;
   barState: string;
   insuranceForm: FormGroup;
   numberOfInsuredValues: any[];
@@ -42,6 +44,7 @@ export class MainInsuranceComponent implements OnInit {
               private utilRepoService: UtilRepoService,
               private apiService: ApiService,
               private router: Router,
+              private insuranceService: InsuranceService,
               private discountService: DiscountService,
               private feeCalculationService: FeeCalculationService) {
     this.insuranceForm = this.formBuilder.group({
@@ -63,22 +66,6 @@ export class MainInsuranceComponent implements OnInit {
 
   ngOnInit(): void {
     this.barState = Page.FIRST;
-  }
-
-  getValues(): MainInsuranceModel {
-    const formValue: MainInsuranceModel = {
-      amountOfIns: this.insuranceForm.controls['amountOfIns'].value,
-      campaignDisc: this.insuranceForm.controls['campaignDisc'].value,
-      chargeFreq: this.insuranceForm.controls['chargeFreq'].value,
-      customerDisc: this.insuranceForm.controls['customerDisc'].value,
-      insuranceDur: this.insuranceForm.controls['insuranceDur'].value,
-      numberOfIns: this.insuranceForm.controls['numberOfIns'].value,
-      paymentMethod: this.insuranceForm.controls['paymentMethod'].value,
-      policyDisc: this.insuranceForm.controls['policyDisc'].value,
-    };
-    this.utilRepoService.findValues(formValue);
-
-    return formValue;
   }
 
   sendValues() {
@@ -104,18 +91,8 @@ export class MainInsuranceComponent implements OnInit {
       paymentMethod: this.insuranceForm.controls['paymentMethod'].value,
       policyMethod: this.insuranceForm.controls['policyDisc'].value,
     };
-    this.utilRepoService.findValues(discounts);
-    for (const prop in discounts) {
-      if (discounts[prop] === null) {
-        discounts[prop] = 0;
-      }
-
-    }
-
-    this.sendDiscount(discounts);
-  }
-
-  sendDiscount(data) {
-    this.discountService.discount.next(data)
+    this.discounts = {...this.insuranceForm.value};
+    this.insuranceService.setDiscounts(this.discounts);
+    this.insuranceService.setDiscountChanges(this.discounts);
   }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {DiscountService} from "../../../../services/discount-service";
 import {DiscountModel} from "../../../../model/discount-model";
+import {InsuranceService} from "../../../../services/insurance.service";
 
 @Component({
   selector: 'app-discount-progress',
@@ -9,12 +9,16 @@ import {DiscountModel} from "../../../../model/discount-model";
 })
 export class DiscountProgressComponent implements OnInit {
 
+  discounts: DiscountModel;
 
-  constructor() {
+  constructor(private insuranceService: InsuranceService) {
   }
 
   ngOnInit(): void {
-
+    this.discounts = this.insuranceService.getDiscounts();
+    this.insuranceService.getDiscountsChanges().subscribe(
+      (discounts) => this.discounts = discounts
+    );
   }
 
 }

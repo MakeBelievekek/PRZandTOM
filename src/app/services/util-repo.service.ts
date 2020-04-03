@@ -92,20 +92,4 @@ export class UtilRepoService {
   getCampaignDiscount() {
     return this.campaignDiscount;
   }
-
-  findValues(formValue) {
-    for (let disc of this.campaignDiscount) {
-      if (disc.name === formValue.campaignDisc.toString()) {
-        formValue.campaignDisc = disc.value;
-
-      }
-    }
-
-    for (let customer of this.customerDiscount) {
-      if (customer.name === formValue.customerDisc.toString()) {
-        formValue.customerDisc = customer.value;
-      }
-    }
-
-  }
 }
