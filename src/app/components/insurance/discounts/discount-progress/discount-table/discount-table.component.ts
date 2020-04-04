@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {DiscountModel} from "../../../../../model/discount-model";
 import {DiscountTableModel} from "../../../../../model/discount-table-model";
 import {DiscountService} from "../../../../../services/discount-service";
+import {InsuranceService} from "../../../../../services/insurance.service";
 
 
 @Component({
@@ -10,18 +11,10 @@ import {DiscountService} from "../../../../../services/discount-service";
   styleUrls: ['./discount-table.component.css'],
 })
 export class DiscountTableComponent implements OnInit {
-  @Input() discounts: DiscountModel;
+  @Input() allDiscounts: DiscountTableModel[] = [];
 
-  // allDiscounts: DiscountTableModel[] = [
-  //   {name: 'Family discount', value: this.discounts.numberOfInsured},
-  //   {name: 'Charge frequency discount', value: this.discounts.chargeFrequency},
-  //   {name: 'Payment method discount', value: this.discounts.paymentMethod},
-  //   {name: 'Policy discount', value: this.discounts.policyMethod},
-  //   {name: 'Campaign discount', value: this.discounts.campaignDisc},
-  //   {name: 'Customer discount', value: this.discounts.customerDisc},
-  // ];
-
-  constructor(private discountService: DiscountService) {
+  constructor(private discountService: DiscountService,
+              private insuranceService: InsuranceService) {
 
   }
 

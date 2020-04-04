@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DiscountService} from "../../../services/discount-service";
 
 
@@ -9,7 +9,7 @@ import {DiscountService} from "../../../services/discount-service";
 })
 export class PercentCircleComponent implements OnInit {
 
-  progress: number = 0;
+  @Input() progress: number = 0;
 
   constructor(private discountService: DiscountService) {
   }

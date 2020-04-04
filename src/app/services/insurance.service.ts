@@ -19,12 +19,12 @@ export class InsuranceService {
       surgical: false,
     }
     this._discounts = {
-      numberOfInsured: null,
-      chargeFrequency: null,
-      policyMethod: null,
-      paymentMethod: null,
-      campaignDisc: null,
-      customerDisc: null,
+      numberOfInsured: 0,
+      chargeFrequency: 0,
+      policyMethod: 0,
+      paymentMethod: 0,
+      campaignDisc: 0,
+      customerDisc: 0,
     }
 
 

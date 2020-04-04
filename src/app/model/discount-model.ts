@@ -5,4 +5,5 @@ export interface DiscountModel {
   paymentMethod: number
   campaignDisc: number
   customerDisc: number
+
 }

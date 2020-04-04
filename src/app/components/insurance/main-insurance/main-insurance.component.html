@@ -56,7 +56,7 @@
           <div class="gridTwoByTwoLeft">
             <label for="policyDisc">Policy discount </label>
             <select id="policyDisc" class="form-control" formControlName="policyDisc" (change)="selectHandler()">
-              <option selected>Choose...</option>
+              <option value="0">Choose...</option>
               <option *ngFor="let discount of this.policyDiscounts"
                       [value]="discount.value">{{discount.name}} </option>
             </select>

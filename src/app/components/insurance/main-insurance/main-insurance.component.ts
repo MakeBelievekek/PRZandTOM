@@ -52,7 +52,7 @@ export class MainInsuranceComponent implements OnInit {
       numberOfIns: [],
       insuranceDur: [],
       chargeFreq: [],
-      policyDisc: [],
+      policyDisc: [0],
       paymentMethod: [],
       campaignDisc: [false],
       customerDisc: [false],
@@ -91,8 +91,11 @@ export class MainInsuranceComponent implements OnInit {
       paymentMethod: this.insuranceForm.controls['paymentMethod'].value,
       policyMethod: this.insuranceForm.controls['policyDisc'].value,
     };
-    this.discounts = {...this.insuranceForm.value};
+    this.discounts = discounts;
     this.insuranceService.setDiscounts(this.discounts);
     this.insuranceService.setDiscountChanges(this.discounts);
+  }
+
+  logger() {
   }
 }
