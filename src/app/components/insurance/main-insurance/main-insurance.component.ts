@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Options} from 'ng5-slider';
 import {Page} from '../../../enum/page';
@@ -44,8 +44,8 @@ export class MainInsuranceComponent implements OnInit {
               private utilRepoService: UtilRepoService,
               private apiService: ApiService,
               private router: Router,
+              private route: ActivatedRoute,
               private insuranceService: InsuranceService,
-              private discountService: DiscountService,
               private feeCalculationService: FeeCalculationService) {
     this.insuranceForm = this.formBuilder.group({
       amountOfIns: [],
@@ -66,12 +66,17 @@ export class MainInsuranceComponent implements OnInit {
 
   ngOnInit(): void {
     this.barState = Page.FIRST;
+    let insurance = this.insuranceService.getInsuranceData();
+    if (insurance) {
+      this.insuranceForm.setValue({...insurance});
+    }
   }
 
   sendValues() {
-    this.insuranceData = {...this.insuranceForm.value};
-    this.insuranceData.customerDisc = 1 + this.insuranceData.customerDisc;
-    this.insuranceData.campaignDisc = 1 + this.insuranceData.campaignDisc;
+    this.insuranceService.setInsuranceData({...this.insuranceForm.value});
+    this.insuranceData = this.insuranceService.getInsuranceData();
+    this.insuranceData.customerDisc = 1 + this.insuranceForm.controls.customerDisc.value;
+    this.insuranceData.campaignDisc = 1 + this.insuranceForm.controls.campaignDisc.value;
     this.date = {...this.model};
     // this.feeCalculationService.calculateFee(this.insuranceData, this.date).subscribe(
     //   value1 => {
@@ -79,10 +84,14 @@ export class MainInsuranceComponent implements OnInit {
     //   }
     // );
     this.router.navigate([Page.SECOND])
+    console.log('hello world')
   }
 
 
   selectHandler() {
+    this.insuranceData = {...this.insuranceForm.value};
+    this.insuranceService.setInsuranceData(this.insuranceData);
+
     const discounts: DiscountModel = {
       campaignDisc: this.insuranceForm.controls['campaignDisc'].value,
       chargeFrequency: this.insuranceForm.controls['chargeFreq'].value,
@@ -96,6 +105,5 @@ export class MainInsuranceComponent implements OnInit {
     this.insuranceService.setDiscountChanges(this.discounts);
   }
 
-  logger() {
-  }
+
 }

@@ -2,15 +2,16 @@ import {Injectable} from '@angular/core';
 import {SelectedInsurancesModel} from "../components/insurance/additional-insurance/selectedInsurances.model";
 import {DiscountModel} from "../model/discount-model";
 import {Subject} from "rxjs";
+import {MainInsuranceModel} from "../model/main-insurance-model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class InsuranceService {
   selectedInsurances: SelectedInsurancesModel;
-  private _discountModel: DiscountModel;
   private _discounts: DiscountModel;
   private _discountChanges = new Subject<DiscountModel>();
+  private _insuranceData: MainInsuranceModel;
 
   constructor() {
     this.selectedInsurances = {
@@ -53,5 +54,13 @@ export class InsuranceService {
 
   getDiscountsChanges() {
     return this._discountChanges;
+  }
+
+  getInsuranceData(): MainInsuranceModel {
+    return this._insuranceData;
+  }
+
+  setInsuranceData(insurance: MainInsuranceModel) {
+    this._insuranceData = insurance;
   }
 }

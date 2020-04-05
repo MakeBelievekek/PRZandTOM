@@ -61,27 +61,27 @@ export class DiscountService {
   addValuesToTable(discounts: DiscountModel): DiscountTableModel[] {
     const discountTableModel = [];
 
-    if (discounts.numberOfInsured) {
+    if (discounts.numberOfInsured && discounts.numberOfInsured != 0) {
       discountTableModel.push({name: 'Family discount', value: discounts.numberOfInsured})
     }
 
-    if (discounts.chargeFrequency) {
+    if (discounts.chargeFrequency && discounts.chargeFrequency != 0) {
       discountTableModel.push({name: 'Charge frequency discount', value: discounts.chargeFrequency})
     }
 
-    if (discounts.paymentMethod) {
+    if (discounts.paymentMethod && discounts.paymentMethod != 0) {
       discountTableModel.push({name: 'Payment method discount', value: discounts.paymentMethod})
     }
 
-    if (discounts.policyMethod) {
+    if (discounts.policyMethod && discounts.policyMethod != 0) {
       discountTableModel.push({name: 'Policy discount', value: discounts.policyMethod})
     }
 
-    if (discounts.campaignDisc) {
+    if (discounts.campaignDisc && discounts.campaignDisc != 0) {
       discountTableModel.push({name: 'Campaign discount', value: discounts.campaignDisc})
     }
 
-    if (discounts.customerDisc) {
+    if (discounts.customerDisc && discounts.customerDisc != 0) {
       discountTableModel.push({name: 'Customer discount', value: discounts.customerDisc})
     }
 
@@ -90,7 +90,7 @@ export class DiscountService {
 
   getValueForCircle(data: DiscountModel): number {
     let sum: number = 0;
-    for (const prop in data) {
+    for (let prop in data) {
       sum += data[prop];
     }
     return 35 >= sum ? sum : 35;

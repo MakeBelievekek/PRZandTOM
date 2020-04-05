@@ -13,8 +13,8 @@ export class DiscountProgressComponent implements OnInit {
 
   discounts: DiscountModel;
   allDiscounts: DiscountTableModel[] = [];
-  progress: number;
-
+  progress: number = 0;
+cd
   constructor(private insuranceService: InsuranceService, private discountService: DiscountService) {
   }
 
@@ -27,7 +27,6 @@ export class DiscountProgressComponent implements OnInit {
         this.discounts = value;
         this.allDiscounts = this.discountService.addValuesToTable(this.discountService.findValues(this.discounts));
         this.progress = this.discountService.getValueForCircle(this.discountService.findValues(this.discounts))
-        console.log(this.progress)
       }
     );
 
